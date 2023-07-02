@@ -7,15 +7,22 @@ const AddFriend = () => {
       <form className="font-medium text-slate-700">
         <div className="mb-3 flex items-center justify-between">
           <label className="">Friend name</label>
-          <input type="text" className="w-56 rounded-xl px-2" />
+          <input
+            type="text"
+            className="w-56 rounded-xl px-2 py-1 text-slate-700"
+          />
         </div>
 
         <div className="flex items-center justify-between">
           <label className="">Image URL</label>
-          <input type="text" className="w-56 rounded-xl px-2" />
+          <input
+            type="text"
+            className="w-56 rounded-xl px-2 py-1 text-slate-700"
+          />
         </div>
         <div className="mt-3 text-right">
           <Button>Add</Button>
+          <Button>Close</Button>
         </div>
       </form>
     </div>
