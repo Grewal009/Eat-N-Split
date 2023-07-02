@@ -2,10 +2,10 @@ import Button from "./Button";
 
 const Friend = ({ friend }) => {
   return (
-    <li className="flex m-5 w-96">
+    <li className="m-5 flex">
       <img src={friend.image} alt={friend.name} className="rounded-full" />
-      <div className="pl-3 w-60">
-        <p className="text-slate-700 text-lg font-bold leading-6">
+      <div className="w-60 pl-3">
+        <p className="text-lg font-bold leading-6 text-slate-700">
           {friend.name}
         </p>
         {friend.balance < 0 && (
@@ -22,7 +22,7 @@ const Friend = ({ friend }) => {
           <p className="text-slate-500">You and {friend.name} are even</p>
         )}
       </div>
-      <Button styletxt="px-4 bg-orange-400 rounded-lg h-8">Select</Button>
+      <Button>Select</Button>
     </li>
   );
 };
