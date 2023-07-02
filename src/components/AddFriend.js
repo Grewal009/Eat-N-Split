@@ -1,8 +1,8 @@
 import Button from "./Button";
 
-const AddFriend = () => {
+const AddFriend = ({ onClick }) => {
   return (
-    <div className="m-5 w-[400px] rounded-2xl border-2 border-slate-200 bg-slate-100 p-5">
+    <div className="m-5 w-[420px] rounded-2xl border-2 border-slate-200 bg-slate-100 p-5">
       <div className="text-right"></div>
       <form className="font-medium text-slate-700">
         <div className="mb-3 flex items-center justify-between">
@@ -22,7 +22,7 @@ const AddFriend = () => {
         </div>
         <div className="mt-3 text-right">
           <Button>Add</Button>
-          <Button>Close</Button>
+          <Button onClick={onClick}>Close</Button>
         </div>
       </form>
     </div>
