@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 
-const AddFriend = ({ onClick }) => {
+const AddFriend = ({ onClick, addHandler }) => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
 
@@ -26,6 +26,8 @@ const AddFriend = ({ onClick }) => {
       balance: 0,
       id,
     };
+
+    addHandler(newFriend);
 
     console.log(newFriend);
 
