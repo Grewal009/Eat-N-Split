@@ -8,7 +8,7 @@ import FormSplitBill from "./components/FormSplitBill";
 const App = () => {
   const [showAddUser, setShowAddUser] = useState(false);
   function onClickHandler() {
-    setShowAddUser(!showAddUser);
+    setShowAddUser((show) => !show);
   }
 
   return (
