@@ -18,11 +18,16 @@ const App = () => {
     setFriends((frnds) => [...frnds, frnd]);
   }
   function onSelectFriend(frn) {
-    setSelectedFriend(frn);
+    //setSelectedFriend(frn);
+    setSelectedFriend((selected) => (selected?.id === frn?.id ? null : frn));
   }
   return (
     <>
-      <FriendList friends={friends} onSelect={onSelectFriend} />
+      <FriendList
+        friends={friends}
+        onSelect={onSelectFriend}
+        selectedFriend={selectedFriend}
+      />
 
       {showAddUser && (
         <AddFriend onClick={onClickHandler} addHandler={addFriendHandler} />
@@ -33,7 +38,7 @@ const App = () => {
         </div>
       )}
 
-      <FormSplitBill />
+      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
     </>
   );
 };
