@@ -20,6 +20,7 @@ const App = () => {
   function onSelectFriend(frn) {
     //setSelectedFriend(frn);
     setSelectedFriend((selected) => (selected?.id === frn?.id ? null : frn));
+    setShowAddUser(false);
   }
   return (
     <>
