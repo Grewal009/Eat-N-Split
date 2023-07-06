@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-const Friend = ({ friend }) => {
+const Friend = ({ friend, onSelect }) => {
   return (
     <li className="m-5 flex">
       <img src={friend.image} alt={friend.name} className="rounded-full" />
@@ -22,7 +22,7 @@ const Friend = ({ friend }) => {
           <p className="text-slate-500">You and {friend.name} are even</p>
         )}
       </div>
-      <Button>Select</Button>
+      <Button onClick={() => onSelect(friend.name)}>Select</Button>
     </li>
   );
 };

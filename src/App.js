@@ -9,15 +9,20 @@ import { initialFriends } from "./utils/constants";
 const App = () => {
   const [friends, setFriends] = useState(initialFriends);
   const [showAddUser, setShowAddUser] = useState(false);
+  const [selectedFriend, setSelectedFriend] = useState(null);
+
   function onClickHandler() {
     setShowAddUser((show) => !show);
   }
   function addFriendHandler(frnd) {
     setFriends((frnds) => [...frnds, frnd]);
   }
+  function onSelectFriend(frn) {
+    setSelectedFriend(frn);
+  }
   return (
     <>
-      <FriendList friends={friends} />
+      <FriendList friends={friends} onSelect={onSelectFriend} />
 
       {showAddUser && (
         <AddFriend onClick={onClickHandler} addHandler={addFriendHandler} />
