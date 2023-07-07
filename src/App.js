@@ -32,29 +32,32 @@ const App = () => {
     setShowAddUser(false);
   }
   return (
-    <>
-      <FriendList
-        friends={friends}
-        onSelect={onSelectFriend}
-        selectedFriend={selectedFriend}
-      />
-
-      {showAddUser && (
-        <AddFriend onClick={onClickHandler} addHandler={addFriendHandler} />
-      )}
-      {!showAddUser && (
-        <div className=" w-[420px] text-right ">
-          <Button onClick={onClickHandler}>Add friend</Button>
-        </div>
-      )}
-
-      {selectedFriend && (
-        <FormSplitBill
+    <div className="flex items-center justify-start">
+      <div>
+        <FriendList
+          friends={friends}
+          onSelect={onSelectFriend}
           selectedFriend={selectedFriend}
-          handleSplitBill={handleSplitBill}
         />
-      )}
-    </>
+
+        {showAddUser && (
+          <AddFriend onClick={onClickHandler} addHandler={addFriendHandler} />
+        )}
+        {!showAddUser && (
+          <div className=" w-[420px] text-right ">
+            <Button onClick={onClickHandler}>Add friend</Button>
+          </div>
+        )}
+      </div>
+      <div className="ml-10">
+        {selectedFriend && (
+          <FormSplitBill
+            selectedFriend={selectedFriend}
+            handleSplitBill={handleSplitBill}
+          />
+        )}
+      </div>
+    </div>
   );
 };
 
