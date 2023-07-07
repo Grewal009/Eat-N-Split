@@ -11,6 +11,15 @@ const App = () => {
   const [showAddUser, setShowAddUser] = useState(false);
   const [selectedFriend, setSelectedFriend] = useState(null);
 
+  function handleSplitBill(val) {
+    setFriends((fr) =>
+      fr.map((f) =>
+        f.id === selectedFriend?.id ? { ...f, balance: f.balance + val } : f
+      )
+    );
+    setSelectedFriend(false);
+  }
+
   function onClickHandler() {
     setShowAddUser((show) => !show);
   }
@@ -39,7 +48,12 @@ const App = () => {
         </div>
       )}
 
-      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
+      {selectedFriend && (
+        <FormSplitBill
+          selectedFriend={selectedFriend}
+          handleSplitBill={handleSplitBill}
+        />
+      )}
     </>
   );
 };
